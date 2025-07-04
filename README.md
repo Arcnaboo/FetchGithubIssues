@@ -1,46 +1,46 @@
 # FetchGitHubIssues
 
-A minimal Java and Python proof-of-concept demonstrating how to extract trainable data from GitHub repositories. Now includes an example script for **real concurrent file fetching** with Python.
+A minimal Java proof-of-concept app that connects to the GitHub API, fetches all issues from a repository, and prints trainable data such as titles, bodies, authors, timestamps, and more.
 
 ---
 
 ## 🚀 What does it do?
 
 ✅ Authenticates to GitHub using a personal access token (PAT).  
-✅ Fetches issues in Java (proof of concept).  
-✅ Fetches file contents concurrently in Python (new example).  
-✅ Extracts key metadata: titles, bodies, authors, timestamps, file sizes, etc.  
-✅ Designed to build a knowledge base or power AI retrieval-augmented generation (RAG) systems.
+✅ Fetches up to 100 issues in a single API request.  
+✅ Extracts key information from each issue (title, body, author, created date, etc.).  
+✅ Prints each issue’s details in a readable format — ideal for building a knowledge base for LLM training or semantic search.
 
 ---
 
 ## 📂 Files
 
 - **FetchGitHubIssues.java**  
-  Java proof of concept: fetches all issues from a repo and prints their details.
-
-- **concurrent_github_fetcher.py**  
-  Python script: fetches file metadata concurrently with bounded parallelism using `asyncio` and `httpx`.
+  The main Java file containing the entire application logic.
 
 ---
 
 ## 🔧 Requirements
 
-- Java 17+
-- Python 3.8+
-- [OkHttp](https://square.github.io/okhttp/) 4.x (for Java)
-- [Jackson Databind](https://github.com/FasterXML/jackson-databind) 2.x (for Java)
-- [httpx](https://www.python-httpx.org/) (for Python)
+- Java 17 or newer
+- [OkHttp](https://square.github.io/okhttp/) 4.x
+- [Jackson Databind](https://github.com/FasterXML/jackson-databind) 2.x
 
 ---
 
-## 🛠️ Java setup
+## 🛠️ Setup
 
-1. Edit `FetchGitHubIssues.java`:
-   - Replace `YOUR_PERSONAL_ACCESS_TOKEN` with your GitHub PAT.
-   - Set `OWNER` and `REPO` appropriately.
+1. **Clone this repo or copy the file** to your project folder.
 
-2. Build and run:
-   ```bash
-   javac -cp ".:path/to/okhttp.jar:path/to/jackson-databind.jar" FetchGitHubIssues.java
-   java -cp ".:path/to/okhttp.jar:path/to/jackson-databind.jar" FetchGitHubIssues
+2. **Add dependencies** (e.g., with Maven):
+   ```xml
+   <dependency>
+     <groupId>com.squareup.okhttp3</groupId>
+     <artifactId>okhttp</artifactId>
+     <version>4.11.0</version>
+   </dependency>
+   <dependency>
+     <groupId>com.fasterxml.jackson.core</groupId>
+     <artifactId>jackson-databind</artifactId>
+     <version>2.17.0</version>
+   </dependency>
