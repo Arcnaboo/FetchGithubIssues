@@ -3,7 +3,7 @@ import com.fasterxml.jackson.databind.*;
 
 public class FetchGitHubIssues {
     private static final String GITHUB_API = "https://api.github.com";
-    private static final String TOKEN = "API_ACCESS_TOKEN";  // replace with Token
+    private static final String TOKEN = "YOUR_PERSONAL_ACCESS_TOKEN";  // replace with Token
     private static final String OWNER = "Arcnaboo";                     // replace with repo owner
     private static final String REPO = "FetchGithubIssues";                  // replace with repo name
 
